@@ -10,6 +10,7 @@ const opts = {
     "Huntthee"
   ]
 };
+
 // Create a client with our options
 const client = new tmi.client(opts);
 
@@ -28,16 +29,23 @@ function onMessageHandler (target, context, msg, self) {
   const commandName = msg.trim();
 
   // If the command is known, let's execute it
-  if (commandName === '!dice') {
+
+  // If the viewer is rolling the dice.
+  if (commandName === '!roll') {
     const num = rollDice();
        if (num === 20){
         client.say(target, `Critical! You rolled ${num}`);
       } else if (num === 1){
-        client.say(targe, `Oh No! Critical Fail!! you rolled a ${num}`);
+        client.say(target, `Oh No! Critical Fail!! you rolled a ${num}`);
       } else {
         client.say(target, `You rolled a ${num}`);
       };
     console.log(`* Executed ${commandName} command`);
+
+  // If the viewer is 
+   } else if (commandName === '!greet') {
+      client.say(target, `Hello and welcome all ye noobs!`)
+  // Otherwise we don't know what they want!
   } else {
     console.log(`* Unknown command ${commandName}`);
   }
