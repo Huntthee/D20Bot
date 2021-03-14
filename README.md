@@ -3,6 +3,8 @@
 
 Created a simple chat bot to roll a 20 sided die and output the result to the twitch chat for DnD games!
 
+Initially the bot was to be used for D20 rolls but seeing the possibilities I will be adding further chat commands and potentially allowing the bot to be used on other channels via the twitch authentication process. But that will be later.
+
 Attributions:
 ---
 [Twitch Devs](https://dev.twitch.tv/docs/irc) is where I figured out how to do this!
