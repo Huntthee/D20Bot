@@ -3,11 +3,11 @@ const tmi = require('tmi.js');
 // Define configuration options
 const opts = {
   identity: {
-    username: "Huntthee",
-    password: "oauth:928dl84o6whyk4mqisg7w3n445xp3q"
+    username: "Your Username Here",
+    password: "Your Pass Here"
   },
   channels: [
-    "Huntthee"
+    "Channel Name Here"
   ]
 };
 
@@ -42,15 +42,15 @@ function onMessageHandler (target, context, msg, self) {
       };
     console.log(`* Executed ${commandName} command`);
 
-  // If the viewer is 
+  // If we are greeting the viewer
    } else if (commandName === '!greet') {
-      client.say(target, `Hello and welcome all ye noobs!`)
+      client.say(target, `Welcome to my channel! Thanks for stopping by!`)
   // Otherwise we don't know what they want!
   } else {
     console.log(`* Unknown command ${commandName}`);
   }
 }
-// Function called when the "dice" command is issued
+// Function called when the "roll" command is issued
 function rollDice () {
   const sides = 20;
   return Math.floor(Math.random() * sides) + 1;
